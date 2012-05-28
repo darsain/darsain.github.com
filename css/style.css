@@ -182,7 +182,7 @@ header h1 { margin: 60px auto 0; font-size: 100px; line-height: 1em; text-align:
 #projects h2 { text-align: right; }
 
 /* Tweets */
-#tweets { margin-top: 2em; }
+#tweets { }
 #tweets h2 { margin-bottom: 0; }
 
 /* Chalklist of buttons */

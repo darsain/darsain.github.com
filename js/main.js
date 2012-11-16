@@ -1,4 +1,5 @@
 (function($){
+	'use strict';
 
 	// Stamps
 	$("#stamps").on('mouseenter mouseleave', 'a', function( e ){

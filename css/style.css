@@ -172,7 +172,7 @@ header h1 { margin: 60px auto 0; font-size: 100px; line-height: 1em; text-align:
 #meanwhile > .right { width: 47%;}
 #meanwhile > .left { float: left; padding: 0 3% 0 0; }
 #meanwhile > .right { float: right; padding: 0 0 0 3%; }
-#meanwhile h2 { position: relative; font-size: 24px; margin-bottom: 1em; }
+#meanwhile h2 { position: relative; font-size: 24px; margin-bottom: 2em; }
 #meanwhile .btwn { position: absolute; display: block; width: 40px; height: 40px; line-height: 40px; background: #eee; top: -4px; left: -45px; font-size: 14px; color: #868686;
 	text-align: center; font-family: Georgia, serif; font-style: italic; text-shadow: 1px 1px 0 #fff; text-transform: uppercase;
 }
@@ -182,28 +182,34 @@ header h1 { margin: 60px auto 0; font-size: 100px; line-height: 1em; text-align:
 #projects h2 { text-align: right; }
 
 /* Tweets */
-#tweets { }
+#experiments { margin-bottom: 2em; }
+#experiments .chalklist { margin-top: -2px; }
+
+/* Tweets */
 #tweets h2 { margin-bottom: 0; }
 
 /* Chalklist of buttons */
 ul.chalklist { list-style: none; margin: 0; padding: 4px 0; padding-bottom: 7px; background: url('../img/grunge_line.png') repeat-x left bottom; }
 ul.chalklist li { margin: 0 1px; padding: 0; }
-ul.chalklist li:hover { margin: 0; border: 1px solid; border-top: 0; border-bottom: 0; border-color: #ddd; border-color: rgba(0,0,0,0.1); background: #f5f5f5; background: rgba(255,255,255,0.3); }
+ul.chalklist li:hover { margin: 0; border: 1px solid; border-top: 0; border-bottom: 0; border-color: #ddd; border-color: rgba(0,0,0,0.1);
+	background: #f5f5f5; background: rgba(255,255,255,0.5);
+}
 
-ul.chalklist li a { margin-top: -4px; display: block; padding: 24px 15px 20px 15px; color: inherit; background: url('../img/grunge_line.png') repeat-x left top; }
+ul.chalklist li a { margin-top: -4px; display: block; padding: 24px 10px 20px 15px; color: inherit; background: url('../img/grunge_line.png') repeat-x left top; }
 ul.chalklist li a h3 { margin: 0; width: 60%; }
-ul.chalklist li a .category { display: block; float: right; height: 20px; line-height: 20px; padding-right: 28px; font-size: 0.8em; font-style: italic;
+ul.chalklist li a .category { display: block; float: right; height: 20px; line-height: 20px; padding-right: 34px; font-size: 0.8em; font-style: italic;
 	background: url('../img/category_icons.png') no-repeat right top;
 }
 
 ul.chalklist .chrome .category { background-position: right -30px; }
 ul.chalklist .jquery .category { background-position: right -60px; }
 ul.chalklist .php .category { background-position: right -90px; }
+ul.chalklist .laravel .category { background-position: right -120px; }
 
 ul.chalklist li a p { clear: both; font-family: Georgia, serif; font-size: 0.8em; margin: 5px 0 0 0; }
 
 /* tweets */
-ul.tweets { list-style: none; margin: 20px 0 0 0; padding: 0; font-family: Georgia, serif; }
+ul.tweets { list-style: none; margin: 45px 0 0 0; padding: 0; font-family: Georgia, serif; }
 ul.tweets li { padding: 20px 0; background: url('../img/grunge_line_subtle.png') repeat-x left bottom; }
 ul.tweets li:first-child { padding-top: 0; }
 ul.tweets li:last-child { padding-bottom: 0; background: none; }

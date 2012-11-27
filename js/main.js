@@ -23,7 +23,7 @@
 
 		// State animation in
 		var $progress = $('#progress'),
-			percent  = 15,
+			percent  = $progress.data('percent') / 1,
 			maxWidth = 594,
 			width    = Math.round( maxWidth / 100 * percent );
 

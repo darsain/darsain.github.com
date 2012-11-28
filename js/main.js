@@ -15,6 +15,7 @@
 	// Tweed
 	$('#tweets').find('ul.tweets').tweed('@Darsain', {
 		limit: 7,
+		amend: 30,
 		template: '<li><a href="https://twitter.com/{{author}}">{{avatar_bigger}}</a><div class="tweet"><span class="text">{{tweet}}</span><a href="{{tweet_url}}" class="time">{{time}}</a></div></li>'
 	});
 

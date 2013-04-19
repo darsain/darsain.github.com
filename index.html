@@ -6,166 +6,105 @@
 	<title>Darsain</title>
 	<meta name="description" content="Personal website of one little web developer &amp; designer.">
 
-	<link rel="shortcut icon" href="favicon.ico">
-
-	<link rel="stylesheet" href="css/style.css?v=1.1">
-	<link rel="stylesheet" href="css/BebasNeue/stylesheet.css?v=1.0">
+	<link rel="stylesheet" href="css/normalize.css?v=1.0">
+	<link rel="stylesheet" href="css/font-awesome.css?v=3.0.2">
+	<link rel="stylesheet" href="css/main.css?v=1.0">
 
 	<script src="js/vendor/modernizr.min.js"></script>
 </head>
-
 <body>
+	<div class="container">
+		<header>
+			<h1>Darsain</h1>
 
-<div id="container">
-	<div class="wrapper">
+			<div class="social">
+				<a href="https://github.com/Darsain" class="github"><strong>Darsain</strong> on Github <span class="icon"><span></span></span></a>
+				<a href="https://twitter.com/Darsain" class="twitter">@<strong>Darsain</strong> on Twitter <span class="icon"><span></span></span></a>
+			</div>
 
-	<header>
+			<div id="progress" class="progress" data-percent="15">
+				<div class="bar">
+					<div class="streaks"></div>
+				</div>
+			</div>
 
-		<h1>Darsain</h1>
+			<div class="note">
+				<h2>new website progress</h2>
+				<em>(has been spinning for a year, and will be spinning for more)</em>
+				<h3>&hellip;meanwhile, checkout&hellip;</h3>
+			</div>
+		</header>
 
-	</header>
-
-	<div id="progress" data-percent="15">
-		<div class="bar">
-			<span class="middle"></span>
-			<span class="left"></span>
-			<span class="right"></span>
-			<div class="streaks"></div>
-		</div>
-	</div>
-
-	<div class="note">
-
-		<h2>new website progress</h2>
-
-		<em>(that'll probably never end)</em>
-
-		<h3>&hellip;meanwhile, checkout&hellip;</h3>
-
-	</div>
-
-	<section id="meanwhile" class="clearfix">
-
-		<div class="left">
-
-			<div id="projects">
-
+		<section class="meanwhile clearfix">
+			<div class="projects">
 				<h2>Projects I'm working on</h2>
 
-				<ul class="chalklist clearfix">
-					<li class="chrome">
-						<a href="https://chrome.google.com/webstore/detail/ichgbbciejbjechpkakbegaaenamkpib">
-							<span class="category">Chrome Extension</span>
-							<h3>Dribbble HD</h3>
-							<p>Display full images while browsing Dribbble shots.</p>
-						</a>
-					</li>
-					<li class="jquery">
-						<a href="http://desandro.github.com/imagesloaded">
-							<span class="category">jQuery plugin</span>
-							<h3>ImagesLoaded</h3>
-							<p>jQuery is all like "You images done yet or what?"</p>
-						</a>
-					</li>
-					<li class="laravel">
-						<a href="http://github.com/Darsain/laravel-console">
-							<span class="category">Laravel bundle</span>
-							<h3>Laravel Console</h3>
-							<p>Browser console for Laravel PHP framework.</p>
-						</a>
-					</li>
-					<li class="jquery">
-						<a href="http://darsain.github.com/loremImages">
-							<span class="category">jQuery plugin</span>
-							<h3>LoremImages</h3>
-							<p>Populating elements with random images.</p>
-						</a>
-					</li>
-					<li class="jquery">
-						<a href="http://darsain.github.com/motio">
-							<span class="category">jQuery plugin</span>
-							<h3>Motio</h3>
-							<p>Simple sprite based animations and panning.</p>
-						</a>
-					</li>
-					<li class="javascript">
-						<a href="http://darsain.github.com/sfx.js">
-							<span class="category">JavaScript</span>
-							<h3>SFX.js</h3>
-							<p>Simple audio wrapper for sound effects on your website.</p>
-						</a>
-					</li>
-					<li class="jquery">
-						<a href="http://darsain.github.com/sly">
-							<span class="category">jQuery plugin</span>
-							<h3>Sly</h3>
-							<p>One-directional scrolling with item based navigation support.</p>
-						</a>
-					</li>
-					<li class="jquery">
-						<a href="http://darsain.github.com/tweed">
-							<span class="category">jQuery plugin</span>
-							<h3>Tweed</h3>
-							<p>Display simple feed of recent tweets.</p>
-						</a>
-					</li>
-					<li class="jquery">
-						<a href="http://darsain.github.com/volley">
-							<span class="category">jQuery plugin</span>
-							<h3>Volley</h3>
-							<p>Dividing and filtering elements into rows based on their visual position.</p>
-						</a>
-					</li>
+				<ul id="projects" class="chalklist" data-ignore="lab,darsain.github.com,chrome-dribbblehd">
+					<li class="loading"><i class="icon-spinner icon-spin"></i>
+				</ul>
+			</div>
+
+			<div class="other">
+				<h2><span class="btwn">or</span>My web experiments</h2>
+
+				<ul id="experiments" class="chalklist">
+					<li class="loading"><i class="icon-spinner icon-spin"></i>
 				</ul>
 
+				<h2><span class="btwn bigger">&amp;</span>My Chrome Extensions</h2>
+
+				<ul id="extensions" class="chalklist">
+					<li class="loading"><i class="icon-spinner icon-spin"></i>
+				</ul>
 			</div>
+		</section>
+	</div><!-- end: .container -->
 
-		</div>
+	<!-- Templates -->
+	<script type="text/tim" class="projects">
+		{{items}}
+			<li>
+				<a href="{{url}}">
+					<span class="meta">{{watchers}} <i class="icon-star"></i></span>
+					<h3>{{name}}</h3>
+					<p>{{description}}</p>
+				</a>
+			</li>
+		{{/items}}
+	</script>
+	<script type="text/tim" class="experiments">
+		{{items}}
+			<li>
+				<a href="{{url}}">
+					<span class="meta">{{scope}}</span>
+					<h3>{{name}}</h3>
+					<p>{{description}}</p>
+				</a>
+			</li>
+		{{/items}}
+	</script>
+	<script type="text/tim" class="extensions">
+		{{items}}
+			<li>
+				<a href="{{url}}">
+					<h3>{{name}}</h3>
+					<p>{{description}}</p>
+				</a>
+			</li>
+		{{/items}}
+	</script>
 
+	<!-- Scripts -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="js/vendor/plugins.js"></script>
+	<script src="js/main.js"></script>
 
-		<div class="right">
-
-			<div id="tweets">
-
-				<h2><span class="btwn amp">&amp;</span>My recent tweets</h2>
-
-				<ul class="tweets"><li class="loading ir">Loading...</li></ul>
-
-			</div>
-
-		</div>
-
-	</section>
-
-	<div id="stamps">
-		<a href="https://github.com/Darsain" class="github"><strong>Darsain</strong> on Github <span class="icon"><span></span></span></a>
-		<a href="https://twitter.com/Darsain" class="twitter">@<strong>Darsain</strong> on Twitter <span class="icon"><span></span></span></a>
-	</div>
-
-	</div>
-</div>
-
-
-<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.7.2.min.js"%3E%3C/script%3E'))</script>
-
-<script src="js/vendor/plugins.js"></script>
-<script src="js/main.js"></script>
-
-<!-- asynchronous google analytics -->
-<script>
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-838758-7']);
-	_gaq.push(['_trackPageview']);
- (function(d, t) {
-	var g = d.createElement(t),
-			s = d.getElementsByTagName(t)[0];
-	g.async = true;
-	g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g, s);
- })(document, 'script');
-</script>
-
+	<!-- Google Analytics -->
+	<script>
+		var _gaq=[['_setAccount', 'UA-838758-7'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
 </body>
 </html>

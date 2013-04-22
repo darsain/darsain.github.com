@@ -10,7 +10,7 @@
 		var percent = $progress.data('percent') / 1;
 
 		// Animate progress bar size
-		$progress.find('.bar').animate({ width : percent + '%' }, 1500 + percent * 20);
+		$progress.find('.bar').css({ width : percent + '%' });
 
 		// Bar animation
 		new Motio(bar, {

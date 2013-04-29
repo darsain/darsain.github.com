@@ -83,7 +83,7 @@
 	function displayProjects(response) {
 		var $projects = $('#projects');
 		if (!response) {
-			$projects.html('<li>Loading repositories failed</li>');
+			$projects.html(tim('listmessage', { status: 'failed', message: 'Loading repositories failed' }));
 			return;
 		}
 
@@ -101,7 +101,7 @@
 	function displayExperiments(response) {
 		var $experiments = $('#experiments');
 		if (!response.data.content) {
-			$experiments.html('<li>Loading experiments failed</li>');
+			$experiments.html(tim('listmessage', { status: 'failed', message: 'Loading experiments failed' }));
 			return;
 		}
 
@@ -112,7 +112,7 @@
 	function displayExtensions(response) {
 		var $extensions = $('#extensions');
 		if (!response) {
-			$extensions.html('<li>Loading extensions failed</li>');
+			$extensions.html(tim('listmessage', { status: 'failed', message: 'Loading extensions failed' }));
 			return;
 		}
 

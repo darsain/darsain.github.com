@@ -114,6 +114,9 @@ header h1 { margin: 0 auto; font-size: 100px; line-height: 1em; text-align: cent
 .chalklist li a .meta .icon-star { font-size: 1.2em; }
 .chalklist li a p { clear: both; font-family: Georgia, serif; font-size: 0.95em; margin: 5px 0 0 0; }
 .chalklist .loading { height: 100px; font-size: 40px; line-height: 100px; text-align: center; }
+.chalklist .message { padding: 30px 0 25px; text-align: center; }
+.chalklist .message:hover { background-color: transparent; }
+.chalklist .message.failed { color: #B44040; }
 
 /* ==========================================================================
    Responsive

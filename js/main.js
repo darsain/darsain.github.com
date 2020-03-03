@@ -9,6 +9,8 @@
 		var bar = $progress.find('.streaks')[0];
 		var percent = $progress.data('percent') / 1;
 
+		if (!bar) return;
+
 		// Animate progress bar size
 		$progress.find('.bar').css({ width : percent + '%' });
 
@@ -24,19 +26,14 @@
 	//   Works
 	// ==========================================================================
 	var apiBase = 'https://api.github.com';
-	var reposURL = apiBase + '/users/Darsain/repos';
-	var experimentsURL = apiBase + '/repos/Darsain/lab/contents/experiments.json';
+	var reposURL = apiBase + '/users/darsain/repos?sort=updated';
+	var experimentsURL = apiBase + '/repos/darsain/lab/contents/experiments.json';
 	var extensions = {
 		items: [
 			{
-				name: 'Dribbble HD',
-				url: 'https://chrome.google.com/webstore/detail/ichgbbciejbjechpkakbegaaenamkpib',
-				description: 'Displays full images while browsing Dribbble shots.'
-			},
-			{
-				name: 'Twitch Giveaways',
-				url: 'https://chrome.google.com/webstore/detail/poohjpljfecljomfhhimjhddddlidhdd',
-				description: 'Giveaway system for Twitch.tv channels.'
+				name: 'Example',
+				url: 'https://chrome.google.com/webstore/detail/oahsfohg',
+				description: 'Description.'
 			}
 		]
 	};
@@ -63,7 +60,7 @@
 				callbacks[i](data.response);
 			}
 		} else {
-			$.ajax(url, { type: 'GET', dataType: 'jsonp', timeout: 3000 }).done(function (response) {
+			$.ajax(url, {type: 'GET', dataType: 'jsonp', headers: {'Accept':'application/vnd.github.v1+json'}, timeout: 3000}).done(function (response) {
 				store.set(key, {
 					lastcall: +new Date(),
 					response: response
@@ -92,9 +89,7 @@
 			items: $.grep(response.data, function (repo) {
 				repo.url = repo.homepage || repo.html_url;
 				return $.inArray(repo.name, ignore) === -1;
-			}).sort(function (a, b) {
-				return a.watchers > b.watchers ? 1 : ( a.watchers < b.watchers ? -1 : 0);
-			}).reverse()
+			})
 		}));
 	}
 
